@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "07093e15-0596-43c9-8552-c199697c7424",
+		"name": "staffNotes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "note",
+			"description": "",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"title\": \"Test\",\n\"content\":\"test\",\n\"userID\":\"5d3638ad21ad6336608a50e0\",\n\"isDeleted\": false,\n\"dateCreated\":\"23\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/note/post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"note",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:8081/note/delete/5d373eb3d1c26a00d403bf18",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"note",
+								"delete",
+								"5d373eb3d1c26a00d403bf18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"title\": \"Test\",\n\"content\":\"testt\",\n\"userID\":\"5d3638ad21ad6336608a50e0\",\n\"isDeleted\": true,\n\"dateCreated\":\"2212131233\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/note/update/5d3752d4eb75f80ef4695674",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"note",
+								"update",
+								"5d3752d4eb75f80ef4695674"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sara@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"Sara\",\r\n    \"lastName\": \"Karadzic\",\r\n    \"jobTitle\": \"HR\",\r\n    \"daysPTO\": 24,\r\n    \"roles\" : [],\r\n    \"isDeleted\": false,\r\n    \"dateCreated\": 2131\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/user/post",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sarak@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"Sara\",\r\n    \"lastName\": \"Karadzic\",\r\n    \"jobTitle\": \"HR\",\r\n    \"daysPTO\": 24,\r\n    \"roles\" : [],\r\n    \"isDeleted\": false,\r\n    \"dateCreated\": 21212,\r\n    \"notes\": []\r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8081/user/update/5d375d0b3cef13098c042c3f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"update",
+								"5d375d0b3cef13098c042c3f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://127.0.0.1:8081/user/delete/5d37547822a4de14c0ea802a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8081",
+							"path": [
+								"user",
+								"delete",
+								"5d37547822a4de14c0ea802a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

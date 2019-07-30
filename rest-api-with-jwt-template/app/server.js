@@ -1,19 +1,21 @@
 //imports
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const userRoute = require("./routes/user.route"); //imports routes for the users
+const config = require("./config/config");
+const userRoute = require("./routes/user.route");
+const noteRoute = require("./routes/note.route");
 
 let port = 8081;
-const db_url = "mongodb://localhost:27017/test";
 
 //global promise
 mongoose.Promise = global.Promise;
 
 //connecting to the database
 mongoose
-  .connect(db_url, {
+  .connect(config.DB_URL, {
     useNewUrlParser: true
   })
   .then(() => {
@@ -25,11 +27,13 @@ mongoose
   });
 
 //configure server
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //route endpoints
 app.use("/user", userRoute);
+app.use("/note", noteRoute);
 
 //initialize server
 app.listen(port, () => {
