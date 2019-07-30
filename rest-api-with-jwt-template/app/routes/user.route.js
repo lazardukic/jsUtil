@@ -8,7 +8,7 @@ const user_controller = require("../controller/user.controller");
 //login
 router.post("/login", user_controller.login);
 
-//get all
+//get all [ only this route is secured ]
 router.get("/all", verifyToken, user_controller.getAll);
 
 //get all
